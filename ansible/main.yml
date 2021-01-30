@@ -1,0 +1,6 @@
+---
+- name: Setup new environment for 'rarfaoui user'
+  hosts: "*"
+  become: yes
+  tasks:
+    - include: playbooks/common/install-aptitude.yml
