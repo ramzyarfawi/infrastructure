@@ -1,0 +1,8 @@
+---
+
+  - name: Deploy stack from a compose file.
+    docker_stack:
+      state: present
+      name: "{{ STACK_NAME }}"
+      compose:
+        - /tmp/tools/docker-compose.yml

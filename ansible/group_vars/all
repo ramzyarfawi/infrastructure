@@ -1,0 +1,7 @@
+# Docker Compose options.
+docker_install_compose: true
+docker_compose_version: "1.25.0"
+docker_compose_path: /usr/local/bin/docker-compose
+# DevOps tools options
+STACK_NAME: 'infra'
+BASE_DOMAIN: 'infra.ubu'

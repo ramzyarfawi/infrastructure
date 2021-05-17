@@ -1,0 +1,11 @@
+---
+  - name: "Install snap using apt"
+    apt: "name=snapd state=latest update_cache=yes force_apt_get=yes"
+
+  - name: "Install microk8s using snap"
+    snap: "name=microk8s state=present classic=yes channel=1.15/stable"
+
+  - name: "Add operation user to 'microk8s' group"
+    user:
+      name: rarfaoui
+      groups: sudo, docker, microk8s

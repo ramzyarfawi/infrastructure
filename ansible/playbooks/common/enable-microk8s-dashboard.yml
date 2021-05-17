@@ -1,0 +1,10 @@
+---
+  - name: "Enable microk8s microk8s-dashboard"
+    shell: microk8s enable dashboard
+
+  - name: "Access token"
+    shell: token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+           microk8s kubectl -n kube-system describe secret $token
+
+  - name: "create microk8s-dashboard"
+    shell: microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard --address 0.0.0.0 10443:443

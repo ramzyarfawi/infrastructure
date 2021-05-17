@@ -1,0 +1,6 @@
+---
+
+  - name: Install docker stack for tools
+    hosts: swarm_manager
+    roles:
+      - tools-setup

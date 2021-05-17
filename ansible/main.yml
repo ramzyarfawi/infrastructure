@@ -2,5 +2,12 @@
 - name: Setup new environment for 'rarfaoui user'
   hosts: "*"
   become: yes
+  vars_files:
+   - group_vars/all
   tasks:
     - include: playbooks/common/install-aptitude.yml
+    - include: playbooks/common/install-docker.yml
+    - include: playbooks/common/install-docker-compose.yml
+    - include: playbooks/common/install-microk8s.yml
+    - include: playbooks/common/install-helm.yml
+#    - include: playbooks/common/enable-microk8s-dashboard.yml

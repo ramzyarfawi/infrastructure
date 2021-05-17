@@ -1,0 +1,11 @@
+---
+
+- name: Add executable bit to helm deployment bash file
+  file:
+    path: ../helm-upgrade.sh
+    state: file
+    mode: 0500
+
+- name: Deploy helm to namespace
+  shell:
+    helm-upgrade.sh
